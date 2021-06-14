@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.row2 {
+  display: flex;
+}
+
 h2 {
   color: green;
 }
@@ -35,4 +39,8 @@ h3 {
   height: 2.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+span {
+  display: flex;
 }
