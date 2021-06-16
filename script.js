@@ -17,12 +17,16 @@ function addNote (){
     noteList.push(note);
 
     noteElement = document.createElement("div");
+    noteElement.setAttribute("id", "column");
     noteNumber = document.createElement("span");
-    noteNumber.innerText = "Note" + noteCount;
+    noteNumber.innerText = "Note " + noteCount;
+    noteNumber.setAttribute("id", "noteNumber");
     noteText = document.createElement("span");
     noteText.innerText = noteList[arrIndex];
     viewButton = document.createElement("BUTTON");
     viewButton.innerText = "View Detail"
+    viewButton.setAttribute("id", "viewButton");
+    viewButton.setAttribute("onclick", "viewNote()");
 
     noteElement.appendChild(noteNumber);
     noteElement.appendChild(noteText);
@@ -30,4 +34,9 @@ function addNote (){
     
     document.getElementById("row2").appendChild(noteElement);
     
+}
+
+function viewNote() {
+    console.log("hello");
+    //Modal box
 }
