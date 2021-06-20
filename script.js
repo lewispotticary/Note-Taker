@@ -25,8 +25,9 @@ function addNote (){
     noteText.innerText = noteList[arrIndex];
     viewButton = document.createElement("BUTTON");
     viewButton.innerText = "View Detail"
-    viewButton.setAttribute("id", "viewButton");
-    viewButton.setAttribute("onclick", "viewNote()");
+    viewButton.setAttribute("class", "viewButton");
+    viewButton.setAttribute("id", arrIndex);
+    viewButton.setAttribute("onclick", "viewNote(this.id)");
 
     noteElement.appendChild(noteNumber);
     noteElement.appendChild(noteText);
@@ -36,7 +37,31 @@ function addNote (){
     
 }
 
-function viewNote() {
-    console.log("hello");
-    //Modal box
+var modal = document.getElementsByClassName("modal")[0];
+var modalContent = document.getElementsByClassName("modal-content")[0];
+var closeBtn = document.getElementsByClassName("closeBtn")[0];
+
+closeBtn.addEventListener("click", closeNote);
+window.addEventListener("click", clickOutside)
+
+function viewNote(clicked_id) {
+    var modalIndex = clicked_id;
+    console.log(modalIndex);
+    var modalText = document.createElement("span");
+    modalText.setAttribute("id", "modalText");
+    modalText.innerText = noteList[modalIndex];
+    modalContent.appendChild(modalText);
+    modal.style.display = "block";
+}
+
+function closeNote() {
+    var modalRemove = document.getElementById("modalText");
+    modalContent.removeChild(modalRemove);
+    modal.style.display = "none";
+}
+
+function clickOutside(e) {
+    if(e.target == modal){
+        modal.style.display = "none";
+    }
 }
