@@ -4,7 +4,7 @@ A web app that allows inputted text to be added to a note. Each note is ordered 
 # Screenshot:
 
 <p align="center">
-  <img src="Screenshot/Note-Taking-Screenshot.JPG" />
+  <img src="Screenshot/Note-Taker-Screenshot.JPG" />
 </p>
 
 #
